@@ -615,7 +615,7 @@ export const SignInPage = ({ className }: SignInPageProps) => {
                         >
                           <QrCode size={24} strokeWidth={2} aria-hidden="true" />
                         </Button>
-                        <Button size="xl" className="flex-1 rounded-none bg-white text-black hover:bg-gray-200 shadow-[0_0_30px_rgba(255,255,255,0.5)] first:rounded-s-xl last:rounded-e-xl focus-visible:z-10 text-xl font-bold tracking-wide">
+                        <Button onClick={() => window.location.href = '/demo'} size="xl" className="flex-1 rounded-none bg-white text-black hover:bg-gray-200 shadow-[0_0_30px_rgba(255,255,255,0.5)] first:rounded-s-xl last:rounded-e-xl focus-visible:z-10 text-xl font-bold tracking-wide">
                           Get Started
                         </Button>
                       </div>
