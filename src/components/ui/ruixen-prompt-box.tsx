@@ -7,20 +7,15 @@ import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
 import { Sparkles, BadgeCheck, SendHorizontal } from "lucide-react";
 
 const TRANSFORM_OPTIONS = [
+  
   {
-    label: "Summarize",
-    icon: Sparkles,
-    color: "text-yellow-500",
-    bg: "bg-yellow-100",
-  },
-  {
-    label: "Correct Grammar",
+    label: "Secure Message",
     icon: BadgeCheck,
     color: "text-green-600",
     bg: "bg-green-100",
   },
   {
-    label: "Compress",
+    label: "Normal Message",
     icon: SendHorizontal,
     color: "text-indigo-500",
     bg: "bg-indigo-100",
@@ -65,7 +60,7 @@ export default function RuixenPromptBox() {
 
           <Textarea
             ref={textareaRef}
-            placeholder="Refine your message..."
+            placeholder="Let Your Heart Speak..."
             value={input}
             onChange={(e) => {
               setInput(e.target.value);
