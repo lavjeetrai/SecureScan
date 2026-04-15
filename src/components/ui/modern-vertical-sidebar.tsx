@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedProfileCard, ProfileCardContent } from './animated-profile-card';
 import CircularGallery from './CircularGallery';
+import { BreakableCard } from './kinetic-shatter-box-section';
 
 type IconComponentType = React.ElementType<{ className?: string }>;
 export interface InteractiveMenuItem {
@@ -176,16 +177,49 @@ const ModernVerticalSidebar: React.FC<InteractiveMenuProps> = ({ items, accentCo
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[200] bg-black"
+          className="fixed inset-0 z-[200] bg-black overflow-y-auto"
         >
           <button 
             onClick={() => setIsExploreOpen(false)}
-            className="absolute top-8 right-8 z-[210] p-4 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all"
+            className="fixed top-8 right-8 z-[210] p-4 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all"
           >
             <X className="w-8 h-8" />
           </button>
-          <div style={{ height: '100vh', width: '100vw', position: 'relative' }}>
+
+          {/* Circular Gallery */}
+          <div style={{ height: '60vh', width: '100vw', position: 'relative' }}>
             <CircularGallery items={undefined} bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
+          </div>
+
+          {/* Breakable Cards Section */}
+          <div className="w-full px-8 pb-16 pt-4 bg-zinc-950">
+            <p className="text-center text-zinc-500 font-mono text-xs uppercase tracking-widest mb-8">
+              ↑ Scroll — Shake the cards below to break them free
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  title: 'SecureScan',
+                  description: 'Instantly convert any text into a high-density Secure QR Code — fast, free, and built for sharing.',
+                },
+                {
+                  title: 'QR Secure',
+                  description: 'Encode messages with military-grade QR density. Shake this card to feel what true security breaks like.',
+                },
+                {
+                  title: 'Share It',
+                  description: 'Share your QR via WhatsApp, Instagram, or download it directly. Your message, your way.',
+                },
+                {
+                  title: 'Open Heart',
+                  description: 'Type up to 1300 characters and let your heart speak — encoded into a scannable moment.',
+                },
+              ].map((card, i) => (
+                <div key={i} className="h-64 w-full">
+                  <BreakableCard title={card.title} description={card.description} />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       )}

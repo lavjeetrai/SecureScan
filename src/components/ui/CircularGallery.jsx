@@ -334,7 +334,11 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: 'logo.gif', text: 'SecureScan' },
+      { 
+        image: 'logo.gif' || 'https://securescanbylav.vercel.app/logo.gif', 
+        text: 'SecureScan', 
+        link: 'https://securescanbylav.vercel.app' 
+      },
       { image: 'https://picsum.photos/seed/2/800/600?grayscale', text: 'Building more for you..' }
      
     ];
