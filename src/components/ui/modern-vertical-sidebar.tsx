@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Compass, Info, Home, X } from 'lucide-react';
+import { Compass, Home, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedProfileCard, ProfileCardContent } from './animated-profile-card';
