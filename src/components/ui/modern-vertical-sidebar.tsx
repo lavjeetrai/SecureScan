@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Compass, Home, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedProfileCard, ProfileCardContent } from './animated-profile-card';
 import CircularGallery from './CircularGallery';
@@ -135,7 +136,7 @@ const ModernVerticalSidebar: React.FC<InteractiveMenuProps> = ({ items, accentCo
           onClick={() => setIsProfileOpen((prev) => !prev)} 
           className="flex items-center justify-center w-full h-16 rounded-2xl hover:bg-white/5 transition-colors group"
         >
-           <img src="https://avatars.githubusercontent.com/u/128236054?v=4" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 group-hover:border-white group-hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all grayscale group-hover:grayscale-0 cursor-pointer object-cover" alt="User Avatar" />
+           <Image src="https://avatars.githubusercontent.com/u/128236054?v=4" width={48} height={48} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 group-hover:border-white group-hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all grayscale group-hover:grayscale-0 cursor-pointer object-cover" alt="User Avatar" />
         </button>
 
         <AnimatePresence>
@@ -184,7 +185,7 @@ const ModernVerticalSidebar: React.FC<InteractiveMenuProps> = ({ items, accentCo
             <X className="w-8 h-8" />
           </button>
           <div style={{ height: '100vh', width: '100vw', position: 'relative' }}>
-            <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
+            <CircularGallery items={undefined} bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
           </div>
         </motion.div>
       )}

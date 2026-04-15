@@ -189,8 +189,8 @@ export const AnimatedProfileCard = React.forwardRef<
     },
     ref
   ) => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const overlayRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const overlayRef = useRef<HTMLDivElement | null>(null);
     const { resolvedTheme } = useTheme();
     const overlayThemeClass = resolvedTheme === 'dark' ? 'light' : 'dark';
 
