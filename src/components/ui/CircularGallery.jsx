@@ -344,7 +344,7 @@ class App {
         text: 'SecureScan', 
         link: 'https://expo1student.vercel.app' 
       },
-      { image: 'https://picsum.photos/seed/2/800/600?grayscale', text: 'Building more for you..' }
+      { image: 'https://picsum.photos/seed/2/800/600?grayscale', text: 'Building more for you...' }
      
     ];
     const galleryItems = items && items.length ? items : defaultItems;
